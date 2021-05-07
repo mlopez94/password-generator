@@ -10,8 +10,11 @@ var speChar = ['!','#','$','%','^','&','*','(',')','@','?','+','=','<','>','/'];
 //checking to see if the array is setup correctly
 //console.log(speChar [3]);
 
+//Welcome prompt
+var startWelcome = prompt ("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
+console.log(startWelcome);
 
-var startWelcome = alert ("Welcome to the Password Generator. Please choose from the following criteria:");
+
 
 //setup confirms
 lowerCase = confirm ("Do  you want lowercase letters?");
@@ -45,6 +48,8 @@ lowerCase = confirm ("Do  you want lowercase letters?");
   else {
     alert ("Your password will not have special characters");
   }
+
+
 
 
 
