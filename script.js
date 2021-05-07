@@ -10,9 +10,25 @@ var speChar = ['!','#','$','%','^','&','*','(',')','@','?','+','=','<','>','/'];
 //checking to see if the array is setup correctly
 //console.log(speChar [3]);
 
-//Welcome prompt
-var startWelcome = prompt ("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
-console.log(startWelcome);
+//Welcome prompt -- console.logging the prompt to see if it the 
+function startWelcome() {
+  var getData = prompt("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
+  if (getData  <=  8 || getData >= 128 ) {
+
+  alert("You need to provide a valid andswer");
+
+  }
+}
+
+startWelcome();
+
+
+
+// } else if {
+//   alert("Please choose a valid number.");
+// }
+
+// console.log(startWelcome);
 
 
 
@@ -67,3 +83,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
