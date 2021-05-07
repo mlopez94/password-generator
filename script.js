@@ -11,6 +11,8 @@ var speChar = ['!','#','$','%','^','&','*','(',')','@','?','+','=','<','>','/'];
 //console.log(speChar [3]);
 
 
+var startWelcome = alert ("Welcome to the Password Generator. Please choose from the following criteria:");
+
 //setup confirms
 lowerCase = confirm ("Do  you want lowercase letters?");
   if (lowerCase) {
