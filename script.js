@@ -1,85 +1,98 @@
 // Assignment code here
 //Set Glbal variables
-function writePassword () {
-var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var numVal = ['1','2','3','4','5','6','7','8','9','0'];
-var speChar = ['!','#','$','%','^','&','*','(',')','@','?','+','=','<','>','/'];
 
-};
+  var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
+  var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+  var numVal = ["1234567890"];
+  var speChar = ["±!@#%^&*()+-=§£™¡¢∞§¶•–≠"];
+  var possNum = "";
+
+
 //checking to see if the array is setup correctly
 //console.log(speChar [3]);
 
 //Welcome prompt -- console.logging the prompt to see if it the 
 function startWelcome() {
-  var getData = prompt("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
+  getData = prompt("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
   if (getData  <=  8 || getData >= 128 ) {
 
   alert("You need to provide a valid andswer");
 
-  }
-}
+  startWelcome();
+  
+  } else {
 
-startWelcome();
-
-
-
-// } else if {
-//   alert("Please choose a valid number.");
-// }
-
-// console.log(startWelcome);
-
+possNum = "";
 
 
 //setup confirms
-lowerCase = confirm ("Do  you want lowercase letters?");
-  if (lowerCase) {
-    alert ("Your password will have lowercase letters");
+lowerCheck = confirm ("Do  you want lowercase letters?");
+  if (lowerCheck) {
+    possNum = possNum + lowerCase
   }
-  else{
+  else {
     alert ("Your password will not have lowercase letters");
   }
 
-  upperCase = confirm ("Do you want uppercase letters?");
-  if (upperCase) {
-    alert ("Your password will have uppercase letters");
+  upperCheck = confirm ("Do you want uppercase letters?");
+  if (upperCheck) {
+     
+    possNum = possNum + upperCase
   }
   else {
     alert ("Your password will not have uppercase letters");
   }
 
-  numVal = confirm ("Do you want your password to have numbers?");
-  if (numVal) {
+  numCheck = confirm ("Do you want your password to have numbers?");
+  if (numCheck) {
     alert ("Your password will have numbers");
+    possNum = possNum + numVal
   }
   else {
     alert ("Your password will not have numbers");
   }
 
-  speChar = confirm ("Do you your password to have special characters?");
-  if (speChar) {
+  specCheck = confirm ("Do you want your password to have special characters?");
+  if (specCheck) {
     alert ("Your password will have special characters");
+    possNum = possNum + speChar
   }
   else {
     alert ("Your password will not have special characters");
   }
+  
+
+}
+
+};
 
 
+
+//for loop
 
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  startWelcome();
+
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  var finPWD = ""
+
+  for (i = 0; i < getData; i++) {
+    finPWD += possNum[Math.floor(Math.random() * possNum.length)];
+  
+  }
+
+  passwordText.value = finPWD;
 
 }
+
+var generateBtn = document.querySelector('#generate');
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
