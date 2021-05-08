@@ -16,7 +16,7 @@ function startWelcome() {
   getData = prompt("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
   if (getData  <=  8 || getData >= 128 ) {
 
-  alert("You need to provide a valid andswer");
+  alert("You need to provide a valid answer");
 
   startWelcome();
   
