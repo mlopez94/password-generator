@@ -11,7 +11,7 @@
 //checking to see if the array is setup correctly
 //console.log(speChar [3]);
 
-//Welcome prompt -- console.logging the prompt to see if it the 
+// Welcome prompt
 function startWelcome() {
   getData = prompt("Welcome to the Password Generator. Please choose a number between 8 and 128 characters:");
   if (getData  <=  8 || getData >= 128 ) {
@@ -25,7 +25,7 @@ function startWelcome() {
 possNum = "";
 
 
-//setup confirms
+// Setup confirms to check
 lowerCheck = confirm ("Do  you want lowercase letters?");
   if (lowerCheck) {
     possNum = possNum + lowerCase
@@ -65,14 +65,6 @@ lowerCheck = confirm ("Do  you want lowercase letters?");
 }
 
 };
-
-
-
-//for loop
-
-
-
-// Get references to the #generate element
 
 
 // Write password to the #password input
